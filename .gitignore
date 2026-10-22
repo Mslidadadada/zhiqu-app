@@ -1,0 +1,38 @@
+# 依赖包
+node_modules
+.pnp
+.pnp.js
+
+# 打包输出
+dist
+build
+out
+
+# 环境配置（不要把密钥提交上去）
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器缓存
+.idea
+.vscode
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.cache
+
+# vite缓存
+.vite
