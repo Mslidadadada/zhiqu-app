@@ -14,7 +14,8 @@
       <div class="loading-meta">
         <span>{{
           failed.length ? '部分资源加载失败' : ready ? '必要资源准备完成' : '正在准备首屏必要配图'
-          }}</span><span>{{ done }} / {{ resources.length }}</span>
+          }}</span>
+          <span>{{ done }} / {{ resources.length }}</span>
       </div>
       <div class="progress-track">
         <i :style="{ width: (done / resources.length) * 100 + '%' }" />
@@ -22,9 +23,11 @@
       <div class="loading-steps">
         <span :class="{ done: done >= 1 }">
           <AppIcon name="book" :size="16" />书页舞台
-        </span><span :class="{ done: done >= 3 }">
+        </span>
+        <span :class="{ done: done >= 3 }">
           <AppIcon name="graph" :size="16" />知识连接
-        </span><span :class="{ done: ready }">
+        </span>
+        <span :class="{ done: ready }">
           <AppIcon name="check" :size="16" />学习空间
         </span>
       </div>
@@ -37,7 +40,8 @@
       <p class="muted small">准备首屏资源，课程与资料进入后按需加载</p>
     </div>
     <PublicFooter>
-      <span>知序 · 从理解到掌握</span><button class="text-button" @click="toggleMotion">
+      <span>知序 · 从理解到掌握</span>
+      <button class="text-button" @click="toggleMotion">
         <AppIcon name="spark" :size="14" />{{
           state.settings.reducedMotion ? '已减少动态效果' : '减少动态效果'
         }}

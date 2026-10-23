@@ -1,0 +1,44 @@
+/* 公共动效工具：由 v-page-reveal 指令跨组件添加；--reveal-delay 控制渐进入场延迟。进度条随区块显示，减少动效时直接呈现内容。 */
+@import './tokens.less';
+
+.motion-reveal {
+  transition:
+    opacity 0.42s ease,
+    transform 0.42s cubic-bezier(0.2, 0.75, 0.25, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-visible .progress-track > i {
+  transform-origin: left center;
+  animation: progress-reveal 0.8s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+@keyframes progress-reveal {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.reduce-motion {
+  .reveal-pending,
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pending,
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

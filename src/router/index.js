@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import { state } from '../store'
+import Landing from '../views/Landing.vue'
 import Splash from '../views/Splash.vue'
 import {
   beginNavigation,
@@ -14,7 +15,7 @@ const router = new Router({
   scrollBehavior: () => ({ x: 0, y: 0 }),
   routes: [
     { path: '/', component: Splash },
-    // { path: '/welcome', component: Landing },
+    { path: '/welcome', component: Landing },
     { path: '*', redirect: '/welcome' }
   ]
 })
